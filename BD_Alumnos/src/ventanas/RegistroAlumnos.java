@@ -33,7 +33,7 @@ public class RegistroAlumnos extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         txt_nombre = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
-        txt_grupo = new javax.swing.JTextField();
+        txt_direccion = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
@@ -41,12 +41,22 @@ public class RegistroAlumnos extends javax.swing.JFrame {
         txt_buscar = new javax.swing.JTextField();
         jButton4 = new javax.swing.JButton();
         label_status = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        txt_tel = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
+        txt_correo = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setText("Nombre:");
 
-        jLabel2.setText("Grupo:");
+        txt_nombre.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txt_nombreActionPerformed(evt);
+            }
+        });
+
+        jLabel2.setText("Direccion");
 
         jButton1.setText("Registrar");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -69,7 +79,7 @@ public class RegistroAlumnos extends javax.swing.JFrame {
             }
         });
 
-        jLabel3.setText("Ingresa el código del alumno: ");
+        jLabel3.setText("Ingresa el código del maestro: ");
 
         jButton4.setText("Buscar");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
@@ -80,30 +90,37 @@ public class RegistroAlumnos extends javax.swing.JFrame {
 
         label_status.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
 
+        jLabel4.setText("Telefono");
+
+        jLabel5.setText("Correo");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(jLabel1)
-                        .addComponent(txt_nombre)
-                        .addComponent(jLabel2)
-                        .addComponent(txt_grupo)
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(jButton1)
-                            .addGap(18, 18, 18)
-                            .addComponent(jButton2)
-                            .addGap(18, 18, 18)
-                            .addComponent(jButton3))
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(jLabel3)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(txt_buscar)))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel1)
+                    .addComponent(txt_nombre)
+                    .addComponent(jLabel2)
+                    .addComponent(txt_direccion)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jButton1)
+                        .addGap(18, 18, 18)
+                        .addComponent(jButton2)
+                        .addGap(18, 18, 18)
+                        .addComponent(jButton3))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txt_buscar))
                     .addComponent(jButton4)
-                    .addComponent(label_status))
+                    .addComponent(label_status)
+                    .addComponent(jLabel4)
+                    .addComponent(txt_tel)
+                    .addComponent(jLabel5)
+                    .addComponent(txt_correo))
                 .addContainerGap(133, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -116,8 +133,16 @@ public class RegistroAlumnos extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(txt_grupo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txt_direccion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
+                .addComponent(jLabel4)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(txt_tel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel5)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(txt_correo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1)
                     .addComponent(jButton2)
@@ -128,7 +153,7 @@ public class RegistroAlumnos extends javax.swing.JFrame {
                     .addComponent(txt_buscar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButton4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 52, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(label_status)
                 .addContainerGap())
         );
@@ -140,15 +165,20 @@ public class RegistroAlumnos extends javax.swing.JFrame {
         //Codigo que permite insertar registros en al base de datos
         try{
             Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/bd_ins", "root", "Polo.2015");
-            PreparedStatement pst = cn.prepareStatement("insert into alumnos values(?,?,?)");
+            PreparedStatement pst = cn.prepareStatement("insert into maestros values(?,?,?,?,?)");
             
             pst.setString(1, "0");
             pst.setString(2, txt_nombre.getText().trim());
-            pst.setString(3, txt_grupo.getText().trim());
+            pst.setString(3, txt_direccion.getText().trim());
+            pst.setString(4, txt_tel.getText().trim());
+            pst.setString(5, txt_correo.getText().trim());
             pst.executeUpdate();
             
             txt_nombre.setText("");
-            txt_grupo.setText("");
+            txt_direccion.setText("");
+            txt_tel.setText("");
+            txt_correo.setText("");
+            
             label_status.setText("Registro exitoso.");
         }catch (Exception e){
             
@@ -160,16 +190,18 @@ public class RegistroAlumnos extends javax.swing.JFrame {
         //Codigo que permite consultar registros en la base de datos
         try{
             Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/bd_ins", "ejemplo1", "Polo.2015");
-            PreparedStatement pst = cn.prepareStatement("select * from alumnos where ID = ?");
+            PreparedStatement pst = cn.prepareStatement("select * from maestros where CodigoMaestros = ?");
             pst.setString(1, txt_buscar.getText().trim());
             
             ResultSet rs = pst.executeQuery();
             
             if(rs.next()){
-                txt_nombre.setText(rs.getString("NombreAlumno"));
-                txt_grupo.setText(rs.getString("Grupo"));
+                txt_nombre.setText(rs.getString("NombreMaestro"));
+                txt_direccion.setText(rs.getString("DireccionMaestro"));
+                txt_tel.setText(rs.getString("TelefonoMaestro"));
+                txt_correo.setText(rs.getString("CorreoMaestros"));
             } else {
-                JOptionPane.showMessageDialog(null, "Alumno no registrado.");
+                JOptionPane.showMessageDialog(null, "Maestro no registrado.");
             }
             
         }catch (Exception e){
@@ -181,13 +213,15 @@ public class RegistroAlumnos extends javax.swing.JFrame {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         //Codigo que permite actualizar registros en la base de datos
         try {
-            String ID = txt_buscar.getText().trim();
+            String CodigoMaestros = txt_buscar.getText().trim();
             
             Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/bd_ins", "ejemplo1", "Polo.2015");
-            PreparedStatement pst = cn.prepareStatement("update alumnos set NombreAlumno = ?, Grupo = ? where ID = " + ID);
+            PreparedStatement pst = cn.prepareStatement("update maestros set NombreMaestro = ?, DireccionMaestro = ?,TelefonoMaestro = ?,CorreoMaestros = ? where CodigoMaestros = " + CodigoMaestros);
             
             pst.setString(1, txt_nombre.getText().trim());
-            pst.setString(2, txt_grupo.getText().trim());
+            pst.setString(2, txt_direccion.getText().trim());
+            pst.setString(3, txt_tel.getText().trim());
+            pst.setString(4, txt_correo.getText().trim());
             pst.executeUpdate();
             
             label_status.setText("Modificación exitosa.");
@@ -201,13 +235,15 @@ public class RegistroAlumnos extends javax.swing.JFrame {
         //Codigo que permite borrar registros en la base de datos
         try {
              Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/bd_ins", "ejemplo1", "Polo.2015");
-            PreparedStatement pst = cn.prepareStatement("delete from alumnos where ID = ?");
+            PreparedStatement pst = cn.prepareStatement("delete from maestros where CodigoMaestros = ?");
             
             pst.setString(1, txt_buscar.getText().trim());
             pst.executeUpdate();
             
             txt_nombre.setText("");
-            txt_grupo.setText("");
+            txt_direccion.setText("");
+            txt_tel.setText("");
+            txt_correo.setText("");
             txt_buscar.setText("");
             
             label_status.setText("Registro eliminado.");
@@ -216,6 +252,10 @@ public class RegistroAlumnos extends javax.swing.JFrame {
         }
         
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void txt_nombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_nombreActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt_nombreActionPerformed
 
     /**
      * @param args the command line arguments
@@ -260,9 +300,13 @@ public class RegistroAlumnos extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel label_status;
     private javax.swing.JTextField txt_buscar;
-    private javax.swing.JTextField txt_grupo;
+    private javax.swing.JTextField txt_correo;
+    private javax.swing.JTextField txt_direccion;
     private javax.swing.JTextField txt_nombre;
+    private javax.swing.JTextField txt_tel;
     // End of variables declaration//GEN-END:variables
 }
