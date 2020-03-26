@@ -17,3 +17,5 @@ DireccionMaestro varchar (60) not null,
 TelefonoMaestro varchar(60) not null,
 CorreoMaestros varchar(60) not null
 )engine=innodb;
+
+select *from maestros;
